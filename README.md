@@ -21,17 +21,17 @@ It supports:
 # Details Feature TL;DR
 ![Capture](https://github.com/user-attachments/assets/eb05fa59-909b-4ca9-9ed8-b5e4545abbcf)
 
-How-to:
+# How-to:
 
 Important Note for depricate UART libraries in Debugging
 -  esp_vfs_dev_uart_use_driver
 
-Use Cases (for education and research only)
+# Use Cases (for education and research only)
 -Ethical hacking labs
 -Wi-Fi penetration testing
 -CTF and red team exercises
 -IoT/embedded security demonstrations
 
-Disclaimer:
+# Disclaimer:
 This project is for educational and authorized security research only. Do not deploy it on networks without permission.
 
