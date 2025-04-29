@@ -26,7 +26,7 @@ It supports:
 - App were built with ESP-IDF Framework
 - Keep the CMakeLists.txt unedited (Baud should be 115200)
 - Once flashed, it require you to enter MAC Address to be spoofed:
-  Ignore to maintain ESP32 Default MAC.
+  Ignore to maintain ESP32 Default MAC by pressing Enter.
 - Monitoring using UART Serial Monitor
 - Optional : You can use another project like Deauther to support your WiFi Attack.
 
