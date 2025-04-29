@@ -25,6 +25,8 @@ Features
 
 ![Capture](https://github.com/user-attachments/assets/eb05fa59-909b-4ca9-9ed8-b5e4545abbcf)
 
+How-to:
+
 Important Note for depricate UART libraries
 -  esp_vfs_dev_uart_use_driver
 
