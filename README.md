@@ -18,15 +18,15 @@ It supports:
 -LED indicator for live status
 -Designed for headless operation — no buttons or screens needed
 
-Features
+# Details Feature
+![Capture](https://github.com/user-attachments/assets/eb05fa59-909b-4ca9-9ed8-b5e4545abbcf)
+TL;DR
 -Custom AP name and open/WPA2 mode
 -Live MAC address spoofing at boot via serial input
 -Redirects all DNS queries (e.g., *.facebook.com → your IP)
 -Modular code structure using ESP-IDF
 -Built-in task-based LED blinking when AP starts
 -Extensible for NAT routing, packet logging, or Telegram bot integration (Placeholder for Future Development)
-
-![Capture](https://github.com/user-attachments/assets/eb05fa59-909b-4ca9-9ed8-b5e4545abbcf)
 
 How-to:
 
