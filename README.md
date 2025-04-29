@@ -39,6 +39,9 @@ Important Note for depricate UART libraries in Debugging
 -CTF and red team exercises
 -IoT/embedded security demonstrations
 
+Future Development:
+- Implementing NAT Routing to prove the Evil Twin Concept.
+
 # Disclaimer:
 This project is for educational and authorized security research only. Do not deploy it on networks without permission.
 
