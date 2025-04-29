@@ -21,7 +21,12 @@ Features
 -Redirects all DNS queries (e.g., *.facebook.com → your IP)
 -Modular code structure using ESP-IDF
 -Built-in task-based LED blinking when AP starts
--Extensible for NAT routing, packet logging, or Telegram bot integration
+-Extensible for NAT routing, packet logging, or Telegram bot integration (Placeholder for Future Development)
+
+![Capture](https://github.com/user-attachments/assets/eb05fa59-909b-4ca9-9ed8-b5e4545abbcf)
+
+Important Note for depricate UART libraries
+-  esp_vfs_dev_uart_use_driver
 
 Use Cases (for education and research only)
 -Ethical hacking labs
@@ -31,3 +36,4 @@ Use Cases (for education and research only)
 
 Disclaimer:
 This project is for educational and authorized security research only. Do not deploy it on networks without permission.
+
