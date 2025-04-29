@@ -35,10 +35,9 @@ It supports:
 -  esp_vfs_dev_uart_use_driver
 
 # Use Cases (for education and research only)
--Ethical hacking labs
--Wi-Fi penetration testing
--CTF and red team exercises
--IoT/embedded security demonstrations
+- Ethical hacking labs
+- Wi-Fi penetration testing
+- IoT/embedded security demonstrations with Microcontroller
 
 Future Development:
 - Implementing NAT Routing to prove the Evil Twin Concept.
