@@ -20,7 +20,8 @@ It supports:
 
 # Details Feature
 ![Capture](https://github.com/user-attachments/assets/eb05fa59-909b-4ca9-9ed8-b5e4545abbcf)
-TL;DR
+
+# TL;DR
 -Custom AP name and open/WPA2 mode
 -Live MAC address spoofing at boot via serial input
 -Redirects all DNS queries (e.g., *.facebook.com → your IP)
