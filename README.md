@@ -22,6 +22,13 @@ It supports:
 ![Capture](https://github.com/user-attachments/assets/eb05fa59-909b-4ca9-9ed8-b5e4545abbcf)
 
 # How-to:
+- Flahing with VS Code PlatformIO
+- App were built with ESP-IDF Framework
+- Keep the CMakeLists.txt unedited (Baud should be 115200)
+- Once flashed, it require you to enter MAC Address to be spoofed:
+  Ignore to maintain ESP32 Default MAC.
+- Monitoring using UART Serial Monitor
+- Optional : You can use another project like Deauther to support your WiFi Attack.
 
 Important Note for depricate UART libraries in Debugging
 -  esp_vfs_dev_uart_use_driver
