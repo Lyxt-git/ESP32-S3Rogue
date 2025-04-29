@@ -31,7 +31,7 @@ It supports:
 - Monitoring using UART Serial Monitor
 - Optional : You can use another project like Deauther to support your WiFi Attack.
 
-Important Note for depricate UART libraries in Debugging
+# Important Note for depricate UART libraries in Debugging
 -  esp_vfs_dev_uart_use_driver
 
 # Use Cases (for education and research only)
