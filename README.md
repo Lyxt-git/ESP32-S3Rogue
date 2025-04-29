@@ -22,6 +22,7 @@ It supports:
 ![Capture](https://github.com/user-attachments/assets/eb05fa59-909b-4ca9-9ed8-b5e4545abbcf)
 
 # How-to:
+# Combine Deauther Device for completing the Evil Twin Ops.
 - Flahing with VS Code PlatformIO
 - App were built with ESP-IDF Framework
 - Keep the CMakeLists.txt unedited (Baud should be 115200)
