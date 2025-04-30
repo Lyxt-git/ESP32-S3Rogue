@@ -11,12 +11,12 @@ ESP32-S3Rogue: Rogue Access Point + DNS Hijacker + MAC Spoofer
 ESP32-S3Rogue is a proof-of-concept firmware for the ESP32-S3 that turns the device into a powerful rogue access point. 
 
 It supports:
--Rogue Wi-Fi AP creation with custom SSID
--MAC address spoofing from UART input
--DNS hijacking to redirect all DNS queries to a fake IP
--Integrated web server for control or phishing (optional)
--LED indicator for live status
--Designed for headless operation — no buttons or screens needed
+- Rogue Wi-Fi AP creation with custom SSID
+- MAC address spoofing from UART input
+- DNS hijacking to redirect all DNS queries to a fake IP
+- Integrated web server for control or phishing (optional)
+- LED indicator for live status
+- Designed for headless operation — no buttons or screens needed
 
 # Details Feature TL;DR
 ![Capture](https://github.com/user-attachments/assets/eb05fa59-909b-4ca9-9ed8-b5e4545abbcf)
