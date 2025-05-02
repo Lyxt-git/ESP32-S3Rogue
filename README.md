@@ -1,5 +1,5 @@
 # ESP32-S3Rogue : Rogue AP + DNS Hijacker + MAC Spoofing + Basic Web Server (NAT Placeholder only)
-Build with ESP32-S3-N16R8 (Xiaozhi Robot Edition) Microcontroller
+Build with ESP32-S3-N16R8 (Xiaozhi Robot Edition) Microcontroller, read change
 
 ![image](https://github.com/user-attachments/assets/29bcabf5-b8cc-4c9d-bf4b-20da729424d7)
 # Description
@@ -34,9 +34,10 @@ It supports:
 - Monitoring using UART Serial Monitor
 - Optional : You can use another project like Deauther to support your WiFi Attack.
 
-# Important Note for depricate Libraries etc ..
--  esp_vfs_dev_uart_use_driver
--  esp_netif_nat.h (Have been removed from ESP-IDF v5.3.3)
+# Changelog :  
+Libraries & Function :
+-  esp_vfs_dev_uart_use_driver (Deprecated Function)
+-  esp_netif_nat.h (Deprecated in ESP-IDF v5.3.3)
 
 # Use Cases (for education and research only)
 - Ethical hacking labs
