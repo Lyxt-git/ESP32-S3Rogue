@@ -7,8 +7,7 @@ Firmware for ESP32-S3 that creates a rogue Wi-Fi AP with MAC spoofing, DNS hijac
 
 Microcontroller : ESP32-S3-N16R8 /  DevKitC
 
-![Uploading n168r.jpeg…]()
-
+![n168r](https://github.com/user-attachments/assets/abe19e98-cbcb-4d02-9496-074a37af4397)
 
 
 ESP32-S3Rogue: Rogue Access Point + DNS Hijacker + MAC Spoofer
