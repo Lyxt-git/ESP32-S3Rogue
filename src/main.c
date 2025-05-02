@@ -20,7 +20,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.*/
 
-#include "mac_spoof.h"  // Include the MAC spoofing header
+#include "mac_spoof.h"
 #include "esp_log.h"
 #include "esp_system.h"
 #include "string.h"
@@ -33,71 +33,20 @@ THE SOFTWARE.*/
 #include "esp_vfs_dev.h"
 #include "driver/uart.h"
 #include "dns_hijack.h"
-#include <ctype.h>  // Include the header for isxdigit
+#include "nat_routing.h"
+#include <ctype.h>  // for isxdigit
 
 static const char *TAG = "main";
-
-// Global flag to track if a client is connected to the AP
 static bool client_connected = false;
 
-// Forward declaration
 void wifi_init_ap(void);
+void wifi_init_sta(void);
 static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data);
 
-// UART console init
 void initialize_console() {
     const int uart_num = UART_NUM_0;
     uart_driver_install(uart_num, 256, 0, 0, NULL, 0);
-
-    // Using the deprecated function as you mentioned
     esp_vfs_dev_uart_use_driver(uart_num);
-}
-
-void app_main(void) {
-    ESP_LOGI(TAG, "ESP32-S3 Rogue AP Starting...");
-
-    // 1. Initialize NVS
-    ESP_ERROR_CHECK(nvs_flash_init());
-
-    // 2. Initialize TCP/IP stack
-    ESP_ERROR_CHECK(esp_netif_init());
-
-    // 3. Create the default event loop
-    ESP_ERROR_CHECK(esp_event_loop_create_default());
-
-    // 4. Initialize LED
-    led_init();
-
-    // 5. Create default WiFi AP interface
-    esp_netif_create_default_wifi_ap();
-
-    // 6. Register WiFi event handler
-    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &wifi_event_handler, NULL));
-
-    // 7. Init WiFi stack
-    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
-    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
-    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_AP));
-
-    // 8. Initialize UART for stdin input
-    initialize_console();
-
-    // 9. Prompt for MAC input
-    prompt_and_set_mac();
-
-    // 10. Setup WiFi AP
-    wifi_init_ap();
-
-    //DNS Hijack
-    init_dns_hijack();
-
-    // 11. Start Web Server
-    init_web_server();
-
-    // Idle loop
-    while (true) {
-        vTaskDelay(pdMS_TO_TICKS(1000));
-    }
 }
 
 void wifi_init_ap(void) {
@@ -108,7 +57,7 @@ void wifi_init_ap(void) {
             .ssid = "YourAP",
             .ssid_len = strlen("YourAP"),
             .channel = 6,
-            .password = "", //Leave blank for Open Network
+            .password = "", // Open network
             .max_connection = 4,
             .authmode = WIFI_AUTH_WPA2_PSK,
             .pmf_cfg = {
@@ -124,11 +73,33 @@ void wifi_init_ap(void) {
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_AP, &ap_config));
     ESP_ERROR_CHECK(esp_wifi_start());
 
-    // Start blinking LED after AP is successfully started
     led_start_blink();
 
     ESP_LOGI(TAG, "WiFi AP started. SSID:%s Password:%s Channel:%d",
              ap_config.ap.ssid, ap_config.ap.password, ap_config.ap.channel);
+}
+
+void wifi_init_sta(void) {
+    ESP_LOGI(TAG, "Setting up WiFi STA...");
+
+    wifi_config_t sta_config = {
+        .sta = {
+            .ssid = "YourRouterSSID",           // Replace with actual SSID
+            .password = "YourRouterPassword",   // Replace with actual password
+            .threshold.authmode = WIFI_AUTH_WPA2_PSK,
+            .pmf_cfg = {
+                .capable = true,
+                .required = false
+            },
+        },
+    };
+
+    esp_netif_create_default_wifi_sta();  // Create default STA interface
+
+    ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &sta_config));
+    ESP_ERROR_CHECK(esp_wifi_connect());
+
+    ESP_LOGI(TAG, "STA connection initiated");
 }
 
 static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t event_id, void* event_data) {
@@ -140,5 +111,40 @@ static void wifi_event_handler(void* arg, esp_event_base_t event_base, int32_t e
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_AP_STADISCONNECTED) {
         ESP_LOGI(TAG, "Client disconnected from AP");
         client_connected = false;
+    }
+}
+
+void app_main(void) {
+    ESP_LOGI(TAG, "ESP32-S3 Rogue AP Starting...");
+
+    ESP_ERROR_CHECK(nvs_flash_init());
+    ESP_ERROR_CHECK(esp_netif_init());
+    ESP_ERROR_CHECK(esp_event_loop_create_default());
+
+    led_init();
+
+    esp_netif_create_default_wifi_ap();  // AP interface created here
+
+    ESP_ERROR_CHECK(esp_event_handler_register(WIFI_EVENT, ESP_EVENT_ANY_ID, &wifi_event_handler, NULL));
+
+    wifi_init_config_t cfg = WIFI_INIT_CONFIG_DEFAULT();
+    ESP_ERROR_CHECK(esp_wifi_init(&cfg));
+
+    ESP_ERROR_CHECK(esp_wifi_set_mode(WIFI_MODE_APSTA));  // Enable both AP and STA
+
+    initialize_console();
+
+    prompt_and_set_mac();
+
+    wifi_init_ap();
+    wifi_init_sta();
+
+    init_nat_routing();     // ← Set up NAT after interfaces are active
+
+    init_dns_hijack();
+    init_web_server();
+
+    while (true) {
+        vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
