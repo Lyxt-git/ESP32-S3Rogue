@@ -8,7 +8,7 @@ Firmware for ESP32-S3 that creates a rogue Wi-Fi AP with MAC spoofing, DNS hijac
 Microcontroller : ESP32-S3-N16R8 /  DevKitC
 
 <p align="center">
-  <img src="![n168r](https://github.com/user-attachments/assets/abe19e98-cbcb-4d02-9496-074a37af4397)" alt="Description" width="300">
+  <img src="https://mischianti.org/wp-content/uploads/2023/06/esp32-S3-DevKitC-1-original-pinout-high.png" alt="Description" width="300">
 </p>
 
 
