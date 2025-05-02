@@ -31,8 +31,9 @@ It supports:
 - Monitoring using UART Serial Monitor
 - Optional : You can use another project like Deauther to support your WiFi Attack.
 
-# Important Note for depricate UART libraries in Debugging
+# Important Note for depricate Libraries etc ..
 -  esp_vfs_dev_uart_use_driver
+-  esp_netif_nat.h (Have been removed from ESP-IDF v5.3.3)
 
 # Use Cases (for education and research only)
 - Ethical hacking labs
