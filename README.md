@@ -3,16 +3,16 @@ Build with ESP32-S3-N16R8 Microcontroller, read changes !
 
 ![image](https://github.com/user-attachments/assets/29bcabf5-b8cc-4c9d-bf4b-20da729424d7)
 # Description
-Firmware for ESP32-S3 that creates a rogue Wi-Fi AP with MAC spoofing, DNS hijacking, and web control. Designed for headless use in security research, CTFs, and IoT testing. Built with ESP-IDF and supports modular extensions.
+Firmware for ESP32-S3 that creates a rogue Wi-Fi AP with MAC spoofing, DNS hijacking, and web control. Designed for headless use in security research and emonstration, and IoT testing. Built with ESP-IDF and supports modular extensions.
 
 # Microcontroller : 
-- ESP32-S3-N16R8 /  DevKitC -  (Xiaozhi Robot Version)
+- ESP32-S3-N16R8 /  DevKitC (Non IPEX) -  (Xiaozhi Robot Version)
 
 # Framework use : 
 - ESP-IDF v5.3.3
-
-ESP32-S3Rogue: Rogue Access Point + DNS Hijacker + MAC Spoofer
-ESP32-S3Rogue is a proof-of-concept firmware for the ESP32-S3 that turns the device into a powerful rogue access point. 
+  
+# TL;DR
+ESP32-S3Rogue: Evil Twin
 
 It supports:
 - Rogue Wi-Fi AP creation with custom SSID
@@ -23,7 +23,7 @@ It supports:
 - NAT Routing for traffic forwarding between AP and STA
 - Client connection tracking (AP client status monitoring)
 
-# Details Feature TL;DR
+# Details Feature
 ![image](https://github.com/user-attachments/assets/2c21e87d-ed8c-4de8-a9d8-f8c91d0e95bf)
 
 # How-to:
