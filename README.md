@@ -22,7 +22,7 @@ It supports:
 - Designed for headless operation — no buttons or screens needed
 
 # Details Feature TL;DR
-![Capture](https://github.com/user-attachments/assets/eb05fa59-909b-4ca9-9ed8-b5e4545abbcf)
+![image](https://github.com/user-attachments/assets/2c21e87d-ed8c-4de8-a9d8-f8c91d0e95bf)
 
 # How-to:
 # Combine Deauther Device for completing the Evil Twin Ops.
