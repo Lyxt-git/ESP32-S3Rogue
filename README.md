@@ -1,4 +1,4 @@
-# ESP32-S3Rogue : Rogue AP + DNS Hijacker + MAC Spoofing (Without NAT)
+# ESP32-S3Rogue : Rogue AP + DNS Hijacker + MAC Spoofing (NAT Placeholder only)
 Build with ESP32-S3-N16R8 (Xiaozhi Robot Edition) Microcontroller
 
 ![image](https://github.com/user-attachments/assets/29bcabf5-b8cc-4c9d-bf4b-20da729424d7)
