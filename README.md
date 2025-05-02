@@ -8,7 +8,8 @@ Firmware for ESP32-S3 that creates a rogue Wi-Fi AP with MAC spoofing, DNS hijac
 # Microcontroller : 
 - ESP32-S3-N16R8 /  DevKitC -  (Xiaozhi Robot Version)
 
-# Framework use, ESP-IDF v5.3.3
+# Framework use : 
+- ESP-IDF v5.3.3
 
 ESP32-S3Rogue: Rogue Access Point + DNS Hijacker + MAC Spoofer
 ESP32-S3Rogue is a proof-of-concept firmware for the ESP32-S3 that turns the device into a powerful rogue access point. 
