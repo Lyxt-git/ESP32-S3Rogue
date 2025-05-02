@@ -1,11 +1,12 @@
 # ESP32-S3Rogue : Rogue AP + DNS Hijacker + MAC Spoofing + Basic Web Server (NAT Placeholder only)
-Build with ESP32-S3-N16R8 (Xiaozhi Robot Edition) Microcontroller, read change
+Build with ESP32-S3-N16R8 Microcontroller, read changes !
 
 ![image](https://github.com/user-attachments/assets/29bcabf5-b8cc-4c9d-bf4b-20da729424d7)
 # Description
 Firmware for ESP32-S3 that creates a rogue Wi-Fi AP with MAC spoofing, DNS hijacking, and web control. Designed for headless use in security research, CTFs, and IoT testing. Built with ESP-IDF and supports modular extensions.
 
-Microcontroller : ESP32-S3-N16R8 /  DevKitC
+# Microcontroller : 
+- ESP32-S3-N16R8 /  DevKitC -  (Xiaozhi Robot Version)
 
 
 
