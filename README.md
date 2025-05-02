@@ -11,10 +11,8 @@ Firmware for ESP32-S3 that creates a rogue Wi-Fi AP with MAC spoofing, DNS hijac
 # Framework use : 
 - ESP-IDF v5.3.3
   
-# TL;DR
+# TL;DR & Function
 ESP32-S3Rogue: Evil Twin
-
-# Function :
 - Rogue Wi-Fi AP creation with custom SSID
 - MAC address spoofing via UART input
 - DNS hijacking to redirect DNS queries to a fake IP
