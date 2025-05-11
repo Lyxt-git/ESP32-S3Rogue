@@ -50,4 +50,8 @@ Future Development:
 # Disclaimer:
 This project is for educational and authorized security research only. Do not deploy it on networks without permission.
 
-Lyxt
+## License
+
+This project is open-source and released under the [MIT License](https://mit-license.org/).
+
+- Author : Lyxt
